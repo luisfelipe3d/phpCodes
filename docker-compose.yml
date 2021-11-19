@@ -1,0 +1,16 @@
+version: '3.8'
+
+volumes:
+  development:
+
+services:
+  php:
+    container_name: "php-development"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: "luisfelipe3d/phpcodes:latest"
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./code:/var/www/html/"
